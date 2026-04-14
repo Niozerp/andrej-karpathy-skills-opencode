@@ -1,8 +1,8 @@
-# Karpathy-Inspired Claude Code Guidelines
+# Karpathy-Inspired OpenCode Guidelines
 
 > **Looking for a managed agents platform?** Check out [Multica](https://github.com/multica-ai/multica) — an open-source platform for running and managing coding agents with reusable skills.
 
-A single `CLAUDE.md` file to improve Claude Code behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+A single `OPENCODE.md` file to improve OpenCode behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
 
 ## The Problems
 
@@ -94,32 +94,46 @@ Strong success criteria let the LLM loop independently. Weak criteria ("make it 
 
 ## Install
 
-**Option A: Claude Code Plugin (recommended)**
+**Option A: Skills CLI (recommended)**
 
-From within Claude Code, first add the marketplace:
-```
-/plugin marketplace add forrestchang/andrej-karpathy-skills
-```
+Install as a skill using the Skills CLI:
 
-Then install the plugin:
-```
-/plugin install andrej-karpathy-skills@karpathy-skills
-```
-
-This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
-
-**Option B: CLAUDE.md (per-project)**
-
-New project:
 ```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
+npx skills add forrestchang/andrej-karpathy-skills@karpathy-guidelines
 ```
 
-Existing project (append):
+This installs the guidelines as an OpenCode skill, making them available across all your projects.
+
+**Option B: OPENCODE.md (per-project)**
+
+Copy and paste the command for your platform into your project directory:
+
+**Linux / macOS (New project):**
 ```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
+curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md && echo "✓ OPENCODE.md installed"
 ```
+
+**Linux / macOS (Append to existing OPENCODE.md):**
+```bash
+echo "" >> OPENCODE.md && curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md >> OPENCODE.md && echo "✓ OPENCODE.md appended"
+```
+
+**Windows PowerShell (New project):**
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md" -OutFile "OPENCODE.md" -UseBasicParsing; Write-Host "✓ OPENCODE.md installed"
+```
+
+**Windows PowerShell (Append to existing OPENCODE.md):**
+```powershell
+"`n" | Out-File -FilePath "OPENCODE.md" -Append -NoNewline; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md" -OutFile "$env:TEMP\opencode_append.md" -UseBasicParsing; Get-Content "$env:TEMP\opencode_append.md" | Out-File -FilePath "OPENCODE.md" -Append; Remove-Item "$env:TEMP\opencode_append.md"; Write-Host "✓ OPENCODE.md appended"
+```
+
+**Windows Command Prompt (cmd.exe):**
+```cmd
+curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md && echo OPENCODE.md installed
+```
+
+*Note: Windows curl requires Windows 10 build 17063+. For older Windows, use PowerShell command above.*
 
 ## Key Insight
 
@@ -140,7 +154,7 @@ These guidelines are working if you see:
 
 ## Customization
 
-These guidelines are designed to be merged with project-specific instructions. Add them to your existing `CLAUDE.md` or create a new one.
+These guidelines are designed to be merged with project-specific instructions. Add them to your existing `OPENCODE.md` or create a new one.
 
 For project-specific rules, add sections like:
 
