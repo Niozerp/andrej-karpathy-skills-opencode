@@ -94,43 +94,31 @@ Strong success criteria let the LLM loop independently. Weak criteria ("make it 
 
 ## Install
 
-**Option A: Skills CLI (recommended)**
-
-Install as a skill using the Skills CLI:
-
-```bash
-npx skills add forrestchang/andrej-karpathy-skills@karpathy-guidelines
-```
-
-This installs the guidelines as an OpenCode skill, making them available across all your projects.
-
-**Option B: OPENCODE.md (per-project)**
-
 Copy and paste the command for your platform into your project directory:
 
 **Linux / macOS (New project):**
 ```bash
-curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md && echo "✓ OPENCODE.md installed"
+curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/Niozerp/andrej-karpathy-skills-opencode/main/OPENCODE.md && echo "✓ OPENCODE.md installed"
 ```
 
 **Linux / macOS (Append to existing OPENCODE.md):**
 ```bash
-echo "" >> OPENCODE.md && curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md >> OPENCODE.md && echo "✓ OPENCODE.md appended"
+echo "" >> OPENCODE.md && curl -fsSL https://raw.githubusercontent.com/Niozerp/andrej-karpathy-skills-opencode/main/OPENCODE.md >> OPENCODE.md && echo "✓ OPENCODE.md appended"
 ```
 
 **Windows PowerShell (New project):**
 ```powershell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md" -OutFile "OPENCODE.md" -UseBasicParsing; Write-Host "✓ OPENCODE.md installed"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Niozerp/andrej-karpathy-skills-opencode/main/OPENCODE.md" -OutFile "OPENCODE.md" -UseBasicParsing; Write-Host "✓ OPENCODE.md installed"
 ```
 
 **Windows PowerShell (Append to existing OPENCODE.md):**
 ```powershell
-"`n" | Out-File -FilePath "OPENCODE.md" -Append -NoNewline; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md" -OutFile "$env:TEMP\opencode_append.md" -UseBasicParsing; Get-Content "$env:TEMP\opencode_append.md" | Out-File -FilePath "OPENCODE.md" -Append; Remove-Item "$env:TEMP\opencode_append.md"; Write-Host "✓ OPENCODE.md appended"
+"`n" | Out-File -FilePath "OPENCODE.md" -Append -NoNewline; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Niozerp/andrej-karpathy-skills-opencode/main/OPENCODE.md" -OutFile "$env:TEMP\opencode_append.md" -UseBasicParsing; Get-Content "$env:TEMP\opencode_append.md" | Out-File -FilePath "OPENCODE.md" -Append; Remove-Item "$env:TEMP\opencode_append.md"; Write-Host "✓ OPENCODE.md appended"
 ```
 
 **Windows Command Prompt (cmd.exe):**
 ```cmd
-curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/OPENCODE.md && echo OPENCODE.md installed
+curl -fsSL -o OPENCODE.md https://raw.githubusercontent.com/Niozerp/andrej-karpathy-skills-opencode/main/OPENCODE.md && echo OPENCODE.md installed
 ```
 
 *Note: Windows curl requires Windows 10 build 17063+. For older Windows, use PowerShell command above.*
